@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
-import { MonPremierComponent } from './mon-premier/mon-premier.component';
 import { GameComponent } from './game/game.component';
 
 import { GameService } from "./services/game.service"; 
@@ -12,8 +11,7 @@ import { GameService } from "./services/game.service";
 
 @NgModule({
   declarations: [
-    AppComponent, 
-    MonPremierComponent,
+    AppComponent,
     GameComponent
   ],
   imports: [

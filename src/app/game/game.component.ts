@@ -12,7 +12,6 @@ export class GameComponent implements OnInit {
 
   @Input() game: Game;
 
-
   GameStatus = GameStatus;
   
   constructor(private gameService: GameService) { }
