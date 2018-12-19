@@ -11,6 +11,14 @@ import { GameViewComponent } from './game-view/game-view.component';
 import { GameService } from "./services/game.service";
 import { AuthComponent } from './auth/auth.component';
 
+import { Routes, RouterModule } from '@angular/router';
+
+const appRoutes: Routes = [
+  { path: 'game', component: GameViewComponent },
+  { path: 'auth', component: AuthComponent },
+  { path: '', component: GameViewComponent }
+
+];
 
 @NgModule({
   declarations: [
@@ -23,6 +31,7 @@ import { AuthComponent } from './auth/auth.component';
     BrowserModule,
     //FontAwesomeModule
     FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     GameService
