@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">  
+      <div class="col-xs-12">  
+        <h2>Mes jeux</h2>  
+        <p>Mis à jour : {{ lastUpdate | date: 'dd/MM/yyyy HH:mm' }}</p>
+        <ul class="list-group">  
+          <app-game  *ngFor="let game of games"
+                         [game]="game"></app-game>  
+        </ul>       
+
+       <button class="btn btn-success"
+              [disabled]="!isAuth"
+              (click)="onEnableAll()">Tout disponible</button>
+
+      <button class="btn btn-danger"
+              [disabled]="!isAuth"
+              (click)="onDisableAll()">Tout indisponible</button>
+  
+      </div>  
+    </div>  
+  </div>

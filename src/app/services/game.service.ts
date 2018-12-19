@@ -10,9 +10,9 @@ export class GameService {
     constructor( ){
         console.log('constructor :');
         this.games = new Array<Game>();
-        this.games.push(new Game(1, 'Splendor', GameStatus.Disponible));
-        this.games.push(new Game(2, 'Saboteur', GameStatus.Disponible));
-        this.games.push(new Game(3, 'Seven Wonders', GameStatus.Indisponible));
+        this.games.push(new Game(1, 'Splendor', GameStatus.Enabled));
+        this.games.push(new Game(2, 'Saboteur', GameStatus.Enabled));
+        this.games.push(new Game(3, 'Seven Wonders', GameStatus.Disabled));
      
     }
 
@@ -31,11 +31,23 @@ export class GameService {
         }
     }
 
-    availableOnOne(id: number) {
-        this.findById(id).status = GameStatus.Disponible;
+    enable(id: number) {
+        this.findById(id).status = GameStatus.Enabled;
     }
 
-    unavailableOnOne(id: number) {
-        this.findById(id).status = GameStatus.Indisponible;
+    disable(id: number) {
+        this.findById(id).status = GameStatus.Disabled;
     }
+
+    enableAll() {
+        for (let game of this.games) {
+          game.status = GameStatus.Enabled;
+        }
+      }
+    
+    disableAll() {
+        for (let game of this.games) {
+          game.status = GameStatus.Disabled;
+        }
+      }
 }

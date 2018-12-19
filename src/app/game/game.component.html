@@ -1,23 +1,23 @@
 <li [ngClass]="{'list-group-item': true,
-                'list-group-item-success': game.status == GameStatus.Disponible,
-                'list-group-item-danger': game.status == GameStatus.Indisponible}">
+                'list-group-item-success': game.status == GameStatus.Enabled,
+                'list-group-item-danger': game.status == GameStatus.Disabled}">
              
 
-    <h4>Jeu : {{ gameName }} -- Statut : 
+    <h4>Jeu : {{ game.name }}  
         <span class='glyphicon glyphicon-remove'  style="color: red"   
-        *ngIf="game.status == GameStatus.Indisponible"></span>
+        *ngIf="game.status == GameStatus.Enabled"></span>
 
        <span class='glyphicon glyphicon-ok'  style="color: green"   
-        *ngIf="game.status == GameStatus.Disponiblz"></span>
+        *ngIf="game.status == GameStatus.Disabled"></span>
 
     </h4>
     <input type="text" class="form-control" [(ngModel)]="game.name">
     <button class="btn btn-sm btn-success"
-        *ngIf="game.status == GameStatus.Indisponible"
+        *ngIf="game.status == GameStatus.Disabled"
         (click)="onSwitch()">Marquer disponible</button>
 
    <button class="btn btn-sm btn-danger"
-    *ngIf="game.status == GameStatus.Disponible"
+    *ngIf="game.status == GameStatus.Enabled"
     (click)="onSwitch()">Marquer indisponible</button>
   </li>
 

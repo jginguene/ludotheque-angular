@@ -20,10 +20,10 @@ export class GameComponent implements OnInit {
   }
 
   onSwitch() {
-    if(this.game.status == GameStatus.Indisponible) {
-      this.gameService.availableOnOne(this.game.id);
-    } else if(this.game.status == GameStatus.Disponible) {
-      this.gameService.unavailableOnOne(this.game.id);
+    if(this.game.status == GameStatus.Disabled) {
+      this.gameService.enable(this.game.id);
+    } else if(this.game.status == GameStatus.Enabled) {
+      this.gameService.disable(this.game.id);
     }
   }
 }

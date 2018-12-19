@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { GameService } from "./services/game.service";  
 import {GameStatus} from "./model/GameStatus";
 import { Game } from './model/Game';
 
@@ -14,12 +13,8 @@ export class AppComponent implements OnInit{
 
   isAuth = false;
 
-  lastUpdate = new Date();
 
-  games: Array<Game>;
-
-
-  constructor(private gameService: GameService) {
+  constructor() {
     setTimeout(
       () => {
         this.isAuth = true;
@@ -28,19 +23,8 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit() {    
-    this.games=this.gameService.games;
     
   }
 
-  onAllAvailable() {
-    for (let game of this.games) {
-      game.status = GameStatus.Disponible;
-    }
-  }
-
-  onAllUnavailable() {
-    for (let game of this.games) {
-      game.status = GameStatus.Indisponible;
-    }
-  }
+ 
 }

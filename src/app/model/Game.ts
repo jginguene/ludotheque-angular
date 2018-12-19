@@ -3,7 +3,7 @@ import { GameStatus } from "./GameStatus";
 export class Game {
 
      name: string = '';
-     status: GameStatus = GameStatus.Disponible;
+     status: GameStatus = GameStatus.Enabled;
      id: number  ;
 
      constructor(aId: number, aName: string, aStatus:GameStatus ) { 
@@ -11,4 +11,4 @@ export class Game {
         this.status = aStatus; 
          this.name = aName; 
     }
-}
+} 

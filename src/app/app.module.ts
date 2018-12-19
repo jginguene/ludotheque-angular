@@ -6,13 +6,18 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { GameComponent } from './game/game.component';
 
-import { GameService } from "./services/game.service"; 
+import { GameViewComponent } from './game-view/game-view.component'; 
+
+import { GameService } from "./services/game.service";
+import { AuthComponent } from './auth/auth.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    GameComponent
+    GameComponent,
+    AuthComponent,
+    GameViewComponent
   ],
   imports: [
     BrowserModule,

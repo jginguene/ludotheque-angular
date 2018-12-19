@@ -1,4 +1,4 @@
 export  enum GameStatus {
-    Disponible ='Disponible',
-    Indisponible='Indisponible',
+    Enabled ='Enabled',
+    Disabled='Disabled',
 }
