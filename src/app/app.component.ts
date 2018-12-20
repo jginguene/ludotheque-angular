@@ -11,20 +11,8 @@ import { Game } from './model/Game';
 export class AppComponent implements OnInit{
   title = 'app';
 
-  isAuth = false;
 
-
-  constructor() {
-    setTimeout(
-      () => {
-        this.isAuth = true;
-      }, 4000
-    );
+  ngOnInit() {        
   }
-
-  ngOnInit() {    
-    
-  }
-
  
 }

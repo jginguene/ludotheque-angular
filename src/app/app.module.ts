@@ -12,6 +12,8 @@ import { GameService } from "./services/game.service";
 import { AuthComponent } from './auth/auth.component';
 
 import { Routes, RouterModule } from '@angular/router';
+import { AuthService } from './services/auth.service';
+import { MenuComponent } from './menu/menu.component';
 
 const appRoutes: Routes = [
   { path: 'game', component: GameViewComponent },
@@ -25,7 +27,8 @@ const appRoutes: Routes = [
     AppComponent,
     GameComponent,
     AuthComponent,
-    GameViewComponent
+    GameViewComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    GameService
+    GameService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
