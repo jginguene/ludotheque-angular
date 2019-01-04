@@ -13,7 +13,7 @@ export class AuthService {
           setTimeout(
             () => {
               this.isAuth = true;
-              this.user = new User(1,'jerome','ginguene','jerome@ginguene.fr');
+             // this.user = new User(1,'jerome','ginguene','jerome@ginguene.fr');
               resolve(true);
             }, 2000
           );

@@ -12,8 +12,11 @@
           <li><a routerLink="auth">Authentification</a></li>
           <li class="active"><a routerLink="game">Jeux</a></li>
       </ul>
+    <ul>
+        <li>Bienvenue </li>
+    </ul>
 
-      <form class="navbar-form navbar-right" role="search">
+      <form class="navbar-form navbar-right" role="search" *ngif=>
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Search">
           </div>

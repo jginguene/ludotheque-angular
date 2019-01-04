@@ -26,6 +26,7 @@ export class GameViewComponent implements OnInit {
   onDisableAll() {
     if(confirm('Etes-vous sûr de vouloir rendre indisponible tous les jeux ?')) {
       this.gameService.disableAll();
+      return 1;
     } else {
       return null;
     }
